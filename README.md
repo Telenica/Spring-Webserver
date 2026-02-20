@@ -8,5 +8,6 @@ Ziele:
 - Gruppierungen zulassen um Angreifer zu finden
 - Fähigkeiten zu Feinden hinzufügen
 - Werte zu Feinden hinzufügen
+- Tests hinzufügen
 
 Endziel: Einfache Erstellung von Gegnergruppen, zielgerichtet und zufällig
