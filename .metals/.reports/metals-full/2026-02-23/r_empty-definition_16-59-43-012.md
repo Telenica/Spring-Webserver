@@ -1,3 +1,14 @@
+error id: file:///C:/Users/jejen/OneDrive/Dokumente/repos/Spring-Webserver/src/main/java/com/example/WebProject/Enemy.java:java/util/Objects#hash().
+file:///C:/Users/jejen/OneDrive/Dokumente/repos/Spring-Webserver/src/main/java/com/example/WebProject/Enemy.java
+empty definition using pc, found symbol in pc: java/util/Objects#hash().
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 1490
+uri: file:///C:/Users/jejen/OneDrive/Dokumente/repos/Spring-Webserver/src/main/java/com/example/WebProject/Enemy.java
+text:
+```scala
 package com.example.WebProject;
 
 import java.util.Objects;
@@ -18,13 +29,11 @@ public class Enemy {
     private String species;
     private String subspecies;
     private String biom;
-    private Status status;
-    private Condition condition;
 
     Enemy() {}
 
     //zur Erstellung
-    Enemy(String species, String subspecies, String biom, Status status, Condition condition){
+    Enemy(String species, String subspecies, String biom){
         this.species = species;
         this.subspecies = subspecies;
         this.biom = biom;
@@ -62,28 +71,10 @@ public class Enemy {
         this.biom = biom;
     }
 
-    //Gesundheitslevel herausgeben und angeben
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    //Gesundheitszustand herausgeben und angeben
-    public Condition getCondition() {
-        return condition;
-    }
-
-    public void setCondition(Condition condition) {
-        this.condition = condition;
-    }
-
     //HashCode erstellen
     @Override
     public int hashCode() {
-        return Objects.hash(this.id, this.species, this.subspecies, this.biom);
+        return Objects.has@@h(this.id, this.species, this.subspecies, this.biom);
     }
 
     //String von allen angegebenen Variablen herausgeben
@@ -92,3 +83,9 @@ public class Enemy {
         return "Enemy{" + "id=" + this.id + ", species='" + this.species + "', subspecies='" + this.subspecies + "', biom='" + this.biom + "'}";
     }
 }
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/util/Objects#hash().

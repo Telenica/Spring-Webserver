@@ -1,3 +1,14 @@
+error id: file:///C:/Users/jejen/OneDrive/Dokumente/repos/Spring-Webserver/src/main/java/com/example/WebProject/EnemyController.java:_empty_/EnemyModelAssembler#
+file:///C:/Users/jejen/OneDrive/Dokumente/repos/Spring-Webserver/src/main/java/com/example/WebProject/EnemyController.java
+empty definition using pc, found symbol in pc: _empty_/EnemyModelAssembler#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 1108
+uri: file:///C:/Users/jejen/OneDrive/Dokumente/repos/Spring-Webserver/src/main/java/com/example/WebProject/EnemyController.java
+text:
+```scala
 package com.example.WebProject;
 
 import java.util.List;
@@ -25,7 +36,7 @@ public class EnemyController {
 
     private final EnemyModelAssembler assembler;
 
-    EnemyController(EnemyRepository repository, EnemyModelAssembler assembler){
+    EnemyController(EnemyRepository repository, Enemy@@ModelAssembler assembler){
         this.repository = repository;
         this.assembler = assembler;
     }
@@ -71,8 +82,6 @@ public class EnemyController {
             enemy.setSpecies(newEnemy.getSpecies());
             enemy.setSubSpecies(newEnemy.getSubSpecies());
             enemy.setBiom(newEnemy.getBiom());
-            enemy.setStatus(newEnemy.getStatus());
-            enemy.setCondition(newEnemy.getCondition());
             return repository.save(enemy);
         }) //
         .orElseGet(() -> {
@@ -93,3 +102,10 @@ public class EnemyController {
         return ResponseEntity.noContent().build();
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/EnemyModelAssembler#
