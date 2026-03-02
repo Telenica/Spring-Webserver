@@ -12,22 +12,22 @@ import jakarta.persistence.Id;
 public class Enemy {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String species;
     private String subspecies;
     private String biom;
-    private Status status;
-    private Condition condition;
+    private int maxHP;
 
     Enemy() {}
 
     //zur Erstellung
-    Enemy(String species, String subspecies, String biom, Status status, Condition condition){
+    Enemy(String species, String subspecies, String biom, int maxHP){
         this.species = species;
         this.subspecies = subspecies;
         this.biom = biom;
+        this.maxHP = maxHP;
     }
 
     //ID herausgeben
@@ -62,22 +62,13 @@ public class Enemy {
         this.biom = biom;
     }
 
-    //Gesundheitslevel herausgeben und angeben
-    public Status getStatus() {
-        return status;
+    //HP herausgeben und angeben
+    public int getMaxHP() {
+        return maxHP;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    //Gesundheitszustand herausgeben und angeben
-    public Condition getCondition() {
-        return condition;
-    }
-
-    public void setCondition(Condition condition) {
-        this.condition = condition;
+    public void setMaxHP(int maxHP) {
+        this.maxHP = maxHP;
     }
 
     //HashCode erstellen

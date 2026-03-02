@@ -71,8 +71,7 @@ public class EnemyController {
             enemy.setSpecies(newEnemy.getSpecies());
             enemy.setSubSpecies(newEnemy.getSubSpecies());
             enemy.setBiom(newEnemy.getBiom());
-            enemy.setStatus(newEnemy.getStatus());
-            enemy.setCondition(newEnemy.getCondition());
+            enemy.setMaxHP(newEnemy.getMaxHP());
             return repository.save(enemy);
         }) //
         .orElseGet(() -> {

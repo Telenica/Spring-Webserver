@@ -3,12 +3,8 @@ package com.example.WebProject;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-// Test ob Server überhaupt ordungsgemäß läuft
+// Integrationstest für Datenbank
 @SpringBootTest
-class WebProjectApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
+public class EnemyRepositoryTest {
+    
 }
