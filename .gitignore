@@ -1,6 +1,8 @@
-# Metals / Scala
+# IDE
 .metals/
 .bloop/
+.idea/
+.vscode/
 
 # Build-Ordner
 target/
