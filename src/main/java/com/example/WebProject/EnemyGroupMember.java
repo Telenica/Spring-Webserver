@@ -1,7 +1,5 @@
 package com.example.WebProject;
 
-import java.util.Objects;
-
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -68,9 +66,11 @@ public class EnemyGroupMember {
     private void updateStatus() {
         if (currentHP <= 0) {
             status = Status.BESIEGT;
-        } else if (currentHP < enemyTemplate.getMaxHP() / 2) {
+        } 
+        else if (currentHP < enemyTemplate.getMaxHP() / 2) {
             status = Status.ANGESCHLAGEN;
-        } else {
+        } 
+        else {
             status = Status.GESUND;
         }
     }
