@@ -10,12 +10,12 @@ Verwendete Dependencies:
 Ziele:
 - Feindesliste vergrößern
 - zufällige Auswahl von Feinden erstellen
-- Gruppierungen zulassen um Angreifer zu finden -> Feindesgruppe und Gruppenmitglieder als Klassen erstellen
-    - Gruppenmitglied mit Status versehen (volles Leben, angeschlagen, besiegt)
+- Gruppierungen zulassen um Angreifer zu finden -> Feindesgruppe und 
+- Gruppenmitglieder ausbauen
 - Fähigkeiten zu Feinden hinzufügen
-- Werte zu Feinden hinzufügen
+- mehr Werte zu Feinden hinzufügen
 - mehr Suchkriterien wie z.B Biome
-- Tests hinzufügen
+- Tests erweitern
 - Schwierigkeitsberechnungen einbauen, vlt auch je nachdem wie stark eine Gruppe ist
 
 Endziel: Einfache Erstellung von Gegnergruppen für PnPs, zielgerichtet und zufällig
