@@ -18,12 +18,13 @@ public class EnemyMemberController {
         this.enemyService = enemyService;
     }
 
+    //einen Gegner erzeugen
     @PostMapping("/{enemyId}")
     public EnemyGroupMember createMember(@PathVariable Long enemyId) {
         return enemyService.memberfromTemplate(enemyId);
     }
 
-    // Optional: mehrere Gegner auf einmal erzeugen
+    //mehrere Gegner auf einmal erzeugen
     @PostMapping("/group")
     public List<EnemyGroupMember> createGroup(@RequestBody List<Long> enemyIds) {
         return enemyIds.stream()
