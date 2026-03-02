@@ -3,15 +3,26 @@
 .bloop/
 .idea/
 .vscode/
+*.iml
 
 # Build-Ordner
 target/
 build/
 out/
+.gradle/
 
 # Logs
 *.log
+hs_err_pid*.log
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Temporary / swap
+*~
+*.swp
+
+# Optional: node_modules if frontend exists
+node_modules/
