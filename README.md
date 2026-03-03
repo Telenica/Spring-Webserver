@@ -9,14 +9,14 @@ Verwendete Dependencies:
 
 Ziele:
 - Feindesliste vergrößern
-- zufällige Auswahl von Feinden erstellen
+- zufällige Auswahl von Feinden mit Service und Controller verbinden
 - Gruppierungen zulassen um Angreifer zu finden -> Feindesgruppe und 
 - Gruppenmitglieder ausbauen
 - Fähigkeiten zu Feinden hinzufügen
 - mehr Werte zu Feinden hinzufügen
 - mehr Suchkriterien wie z.B Biome
 - Tests erweitern
-- Ausgabe für leere Codntion anpassen
+- Ausgabe für leere Condition anpassen
 - String für einzelnen GroupMember um gleich alle Infos darüber zu haben
 - Schwierigkeitsberechnungen einbauen, vlt auch je nachdem wie stark eine Gruppe ist
 
