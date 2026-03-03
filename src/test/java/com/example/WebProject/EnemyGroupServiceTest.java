@@ -85,6 +85,8 @@ public class EnemyGroupServiceTest {
         EnemyGroupMember member = new EnemyGroupMember();
         member.setEnemyTemplate(goblinTemplate);
 
+        assertTrue(member.getConditions().isEmpty());
+
         member.addCondition(Condition.FURCHT);
         member.addCondition(Condition.BETAEUBT);
 
@@ -107,4 +109,5 @@ public class EnemyGroupServiceTest {
 
         assertEquals(1, member.getConditions().size());
     }
+
 }
