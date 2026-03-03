@@ -67,7 +67,7 @@ public class EnemyGroupMember {
         if (currentHP <= 0) {
             status = Status.BESIEGT;
         } 
-        else if (currentHP < enemyTemplate.getMaxHP() / 2) {
+        else if (currentHP <= enemyTemplate.getMaxHP() / 2) {
             status = Status.ANGESCHLAGEN;
         } 
         else {

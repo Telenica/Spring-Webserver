@@ -80,6 +80,6 @@ public class Enemy {
     //String von allen angegebenen Variablen herausgeben
     @Override
     public String toString() {
-        return "Enemy{" + "id=" + this.id + ", species='" + this.species + "', subspecies='" + this.subspecies + "', biom='" + this.biom + "'}";
+        return "Enemy{" + "id=" + this.id + ", species='" + this.species + "', subspecies='" + this.subspecies + "', biom='" + this.biom + "', max HP='" + this.maxHP + "'}";
     }
 }

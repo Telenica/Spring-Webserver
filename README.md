@@ -16,6 +16,8 @@ Ziele:
 - mehr Werte zu Feinden hinzufügen
 - mehr Suchkriterien wie z.B Biome
 - Tests erweitern
+- Ausgabe für leere Codntion anpassen
+- String für einzelnen GroupMember um gleich alle Infos darüber zu haben
 - Schwierigkeitsberechnungen einbauen, vlt auch je nachdem wie stark eine Gruppe ist
 
 Endziel: Einfache Erstellung von Gegnergruppen für PnPs, zielgerichtet und zufällig

@@ -2,9 +2,8 @@ package com.example.WebProject;
 
 public enum Condition {
     BETAEUBT, //
-    ENTRÜCKT, //
+    ENTRUECKT, //
     FURCHT, //
-    KEINE, //
     PARALYSIERT, //
     VERGIFTET, //
     VERWIRRT
