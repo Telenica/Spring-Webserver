@@ -4,5 +4,5 @@ public enum Systeme {
     DND,
     DSA,
     DAGGERHEART,
-    HOMEBREW
+    HOMEBREW;
 }
