@@ -18,6 +18,11 @@ public class LoadDatabase {
             log.info("Preloading " + repository.save(new Enemy("Wolf", "Alpha Wolf", "Wald", 100)));
             log.info("Preloading " + repository.save(new Enemy("Ork", "Schamane", "Orkland", 100)));
             log.info("Preloading " + repository.save(new Enemy("Ork", "Krieger", "Orkland", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Mensch", "Bandit", "Wald", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Mensch", "Söldner", "Wald", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Mensch", "Gardist", "Stadt", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Drache", "Lindwurm", "Höhle", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Elf", "Waldelf", "Wald", 100)));
         };
     }
 }
