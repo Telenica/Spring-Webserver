@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+// testen von laden und speichern von Feinden
 @SpringBootTest
 @Transactional // rollt DB-Änderungen nach jedem Test zurück
 public class EnemyGroupServiceDbTest {
@@ -32,6 +33,7 @@ public class EnemyGroupServiceDbTest {
         wolfTemplate = enemyRepository.save(new Enemy("Wolf", "Forest Wolf", "Wald", 15));
     }
 
+    //Überprüfen ob Gruppenmitglied mit Status und HP gespeichert ist
     @Test
     void testMemberPersistence() {
         EnemyGroupMember member = enemyService.memberfromTemplate(goblinTemplate.getId());
@@ -49,6 +51,7 @@ public class EnemyGroupServiceDbTest {
         assertTrue(saved.getConditions().isEmpty());
     }
 
+    //Test zur Gruppenerstellung
     @Test
     void testCreateGroupPersistence() {
         List<Long> ids = List.of(goblinTemplate.getId(), wolfTemplate.getId());
@@ -69,6 +72,7 @@ public class EnemyGroupServiceDbTest {
         assertTrue(group.stream().anyMatch(m -> m.getEnemyTemplate().getSpecies().equals("Wolf")));
     }
 
+    //Test zur Speicherung des Zustands eines Gruppenmitglieds
     @Test
     void testAddConditionsPersistence() {
         EnemyGroupMember member = enemyService.memberfromTemplate(goblinTemplate.getId());
