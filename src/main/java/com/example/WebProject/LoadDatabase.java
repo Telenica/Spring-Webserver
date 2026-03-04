@@ -14,10 +14,10 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(EnemyRepository repository) {
         return args -> {
-            log.info("Preloading " + repository.save(new Enemy("Wolf", "gewöhnlicher Wolf")));
-            log.info("Preloading " + repository.save(new Enemy("Wolf", "Alpha Wolf")));
-            log.info("Preloading " + repository.save(new Enemy("Ork", "Schamane")));
-            log.info("Preloading " + repository.save(new Enemy("Ork", "Krieger")));
+            log.info("Preloading " + repository.save(new Enemy("Wolf", "gewöhnlicher Wolf", "Wald", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Wolf", "Alpha Wolf", "Wald", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Ork", "Schamane", "Orkland", 100)));
+            log.info("Preloading " + repository.save(new Enemy("Ork", "Krieger", "Orkland", 100)));
         };
     }
 }
