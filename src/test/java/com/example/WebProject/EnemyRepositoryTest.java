@@ -16,7 +16,7 @@ public class EnemyRepositoryTest {
 
     @Test
     void testSaveAndFindById() {
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Forest", 10);
+        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
         Enemy saved = enemyRepository.save(goblin);
 
         Optional<Enemy> found = enemyRepository.findById(saved.getId());
@@ -26,18 +26,18 @@ public class EnemyRepositoryTest {
 
     @Test
     void testFindAll() {
-        enemyRepository.save(new Enemy("Goblin", "Forest Goblin", "Forest", 10));
-        enemyRepository.save(new Enemy("Orc", "Hill Orc", "Hills", 15));
+        enemyRepository.save(new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5));
+        enemyRepository.save(new HomeEnemy("Orc", "Hill Orc", "Hills", 15, Systeme.HOMEBREW, 50, 20));
 
         assertEquals(2, enemyRepository.findAll().size());
     }
 
     @Test
     void testFindMethods() {
-        enemyRepository.save(new Enemy("Goblin", "Forest Goblin", "Forest", 10));
-        enemyRepository.save(new Enemy("Wolf", "Desert Wolf", "Desert", 15));
-        enemyRepository.save(new Enemy("Wolf", "Forest Wolf", "Forest", 15));
-        enemyRepository.save(new Enemy("Orc", "Hill Orc", "Hills", 30));
+        enemyRepository.save(new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5));
+        enemyRepository.save(new HomeEnemy("Wolf", "Desert Wolf", "Desert", 15, Systeme.HOMEBREW, 25, 10));
+        enemyRepository.save(new HomeEnemy("Wolf", "Forest Wolf", "Forest", 15, Systeme.HOMEBREW, 25, 10));
+        enemyRepository.save(new HomeEnemy("Orc", "Hill Orc", "Hills", 30, Systeme.HOMEBREW, 50, 20));
 
         List<Enemy> goblins = enemyRepository.findBySpecies("Goblin");
         List<Enemy> wolves = enemyRepository.findBySpecies("Wolf");

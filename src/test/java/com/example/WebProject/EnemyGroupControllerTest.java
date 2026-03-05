@@ -36,7 +36,7 @@ public class EnemyGroupControllerTest {
     //Getter für Alle testen
     @Test
     void testGetAllEnemies() throws Exception {
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
 
         // Repository liefert 1 Enemy
         when(repository.findAll()).thenReturn(List.of(goblin));
@@ -51,7 +51,7 @@ public class EnemyGroupControllerTest {
     @Test
     void testGetOneEnemy() throws Exception {
 
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
 
         when(repository.findById(1L)).thenReturn(Optional.of(goblin));
         when(assembler.toModel(goblin)).thenReturn(EntityModel.of(goblin));
@@ -63,7 +63,7 @@ public class EnemyGroupControllerTest {
     @Test
     void testCreateEnemy() throws Exception {
 
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
         EntityModel<Enemy> model = EntityModel.of(goblin);
         model.add(Link.of("http://localhost/enemys/1").withSelfRel());
 
@@ -78,8 +78,8 @@ public class EnemyGroupControllerTest {
     @Test
     void testReplaceEnemy() throws Exception {
 
-        Enemy existing = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
-        Enemy updated = new Enemy("Orc", "Hill Orc", "Berge", 20);
+        Enemy existing = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
+        Enemy updated = new HomeEnemy("Orc", "Hill Orc", "Berge", 20, Systeme.HOMEBREW, 50, 20);
 
         when(repository.findById(1L)).thenReturn(Optional.of(existing));
         when(repository.save(any(Enemy.class))).thenReturn(updated);

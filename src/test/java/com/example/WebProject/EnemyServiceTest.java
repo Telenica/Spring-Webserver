@@ -10,11 +10,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class EnemyServiceTest {
 
-    private Enemy goblin;
+    private HomeEnemy goblin;
 
     @BeforeEach
     void setup() {
-        goblin = new Enemy("Goblin", "Forest Goblin", "Forest", 10);
+        goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
     }
 
     @Test
@@ -42,3 +42,4 @@ public class EnemyServiceTest {
         assertEquals("Enemy{id=null, species='Goblin', subspecies='Forest Goblin', biom='Forest', max HP='10'}", goblin.toString());
     }
 }
+

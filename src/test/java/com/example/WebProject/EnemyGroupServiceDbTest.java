@@ -29,8 +29,8 @@ public class EnemyGroupServiceDbTest {
 
     @BeforeEach
     void setup() {
-        goblinTemplate = enemyRepository.save(new Enemy("Goblin", "Forest Goblin", "Wald", 10));
-        wolfTemplate = enemyRepository.save(new Enemy("Wolf", "Forest Wolf", "Wald", 15));
+        goblinTemplate = enemyRepository.save(new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5));
+        wolfTemplate = enemyRepository.save(new HomeEnemy("Wolf", "Forest Wolf", "Wald", 15, Systeme.HOMEBREW, 20,10));
     }
 
     //Überprüfen ob Gruppenmitglied mit Status und HP gespeichert ist

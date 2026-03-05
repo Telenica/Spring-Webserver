@@ -14,7 +14,7 @@ public class EnemyGroupServiceTest {
 
     @BeforeEach
     void setup() {
-        goblinTemplate = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        goblinTemplate = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
     }
 
     @Test
