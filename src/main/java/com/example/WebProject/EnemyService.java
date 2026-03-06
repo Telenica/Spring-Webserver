@@ -1,6 +1,7 @@
 package com.example.WebProject;
 
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 // Erstellung von Gruppenteilnehmern

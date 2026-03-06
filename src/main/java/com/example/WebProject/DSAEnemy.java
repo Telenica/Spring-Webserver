@@ -1,6 +1,11 @@
 package com.example.WebProject;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class DSAEnemy extends Enemy{
+    
+    //Basiswerte
     private int MUT;
     private int KLUGHEIT;
     private int INTUITION;

@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 @Entity
 public class HomeEnemy extends Enemy{
     
+    //Basiswerte
     private int attacke;
     private int verteidigung;
 
