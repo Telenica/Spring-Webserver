@@ -20,8 +20,9 @@ public class DSAEnemy extends Enemy{
     private int PARADE;
     private int FERNKAMPF;
     private int AUSWEICHEN;
+    private List<DSAWaffe> WAFFEN;
 
-    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW){
+    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW, List<DSAWaffe> WAFFEN){
         super(species, subSpecies, biom, maxHP, sys);
         this.MUT = MU;
         this.KLUGHEIT = KL;
@@ -37,6 +38,7 @@ public class DSAEnemy extends Enemy{
         this.PARADE = PA;
         this.FERNKAMPF = FK;
         this.AUSWEICHEN = AW;
+        this.WAFFEN = WAFFEN;
     }
 
     //Getter und Setter
@@ -165,5 +167,22 @@ public class DSAEnemy extends Enemy{
 
     public void setAW(int AW) {
         this.AUSWEICHEN = AW;
+    }
+
+    //Waffen
+    public List getWaffen() {
+        return WAFFEN;
+    }
+
+    public void setWaffen(List<DSAWaffe> WAFFEN) {
+        this.WAFFEN = WAFFEN;
+    }
+
+    public void addWaffe(DSAWaffe Waffe) {
+        this.WAFFEN.add(Waffe);
+    }
+
+    public void removeWaffe(DSAWaffe Waffe) {
+        this.WAFFEN.remove(Waffe);
     }
 }

@@ -15,8 +15,9 @@ public class DndEnemy extends Enemy {
     private int Ac;
     private int Speed;
     private double Cr;
+    private List<DnDWaffe> Waffen;
 
-    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, double Cr){
+    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, double Cr, List<DnDWaffe> Waffen){
         super(species, subspecies, biom, maxHP, sys);
         this.Str = Str;
         this.Dex = Dex;
@@ -27,6 +28,7 @@ public class DndEnemy extends Enemy {
         this.Ac = Ac;
         this.Speed = Speed;
         this.Cr = Cr;
+        this.Waffen = Waffen;
     }
 
     //Getter und Setter
@@ -111,4 +113,20 @@ public class DndEnemy extends Enemy {
         this.Cr = Cr;
     }
 
+    //Waffen
+    public List getWaffen() {
+        return WAFFEN;
+    }
+
+    public void setWaffen(List<DnDWaffe> WAFFEN) {
+        this.WAFFEN = WAFFEN;
+    }
+
+    public void addWaffe(DnDWaffe Waffe) {
+        this.WAFFEN.add(Waffe);
+    }
+
+    public void removeWaffe(DnDWaffe Waffe) {
+        this.WAFFEN.remove(Waffe);
+    }
 }
