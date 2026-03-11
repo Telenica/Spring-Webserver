@@ -14,10 +14,16 @@ public class DndEnemy extends Enemy {
     private int Cha;
     private int Ac;
     private int Speed;
+    private int Ini;
     private double Cr;
     private List<DnDWaffe> Waffen;
+    private List<DnDSpells> Spells;
+    private List<DnDDamageType> Resistance;
+    private List<DnDDamageType> Immunitys;
+    private List<DnDSense> Senses;
+    private List<DnDAction> Actions;
 
-    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, double Cr, List<DnDWaffe> Waffen){
+    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, int Ini, double Cr, List<DnDWaffe> Waffen,List<DnDDamageType> Resistance, List<DnDDamageType> Immunitys, List<Sense> Senses, List<DnDSpells> Spells, List<DnDAction> Actions){
         super(species, subspecies, biom, maxHP, sys);
         this.Str = Str;
         this.Dex = Dex;
@@ -27,8 +33,14 @@ public class DndEnemy extends Enemy {
         this.Cha = Cha;
         this.Ac = Ac;
         this.Speed = Speed;
+        @Getter@Setter this.Ini = Ini;
         this.Cr = Cr;
         this.Waffen = Waffen;
+        @Getter@Setter this.Resistance = Resistance;
+        @Getter@Setter this.Immunitys = Immunitys;
+        @Getter@Setter this.Senses = Senses;
+        this.Spells = Spells;
+        @Getter@Setter this.Actions = Actions;
     }
 
     //Getter und Setter
@@ -118,15 +130,32 @@ public class DndEnemy extends Enemy {
         return WAFFEN;
     }
 
-    public void setWaffen(List<DnDWaffe> WAFFEN) {
-        this.WAFFEN = WAFFEN;
+    public void setWaffen(List<DnDWaffe> Waffen) {
+        this.Waffen = Waffen;
     }
 
     public void addWaffe(DnDWaffe Waffe) {
-        this.WAFFEN.add(Waffe);
+        this.Waffen.add(Waffe);
     }
 
     public void removeWaffe(DnDWaffe Waffe) {
-        this.WAFFEN.remove(Waffe);
+        this.Waffen.remove(Waffe);
+    }
+
+    //Spells
+    public List getSpells() {
+        return this.Spells;
+    }
+
+    public void setSpells(List<DnDSpells> Spells) {
+        this.Spells = Spells;
+    }
+
+    public void addSpell(DnDSpells Spell) {
+        this.Spells.add(Spell);
+    }
+
+    public void removeSpell(DnDSpells Spell) {
+        this.WAFFEN.remove(Spell);
     }
 }

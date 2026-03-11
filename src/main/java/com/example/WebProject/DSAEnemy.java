@@ -21,8 +21,9 @@ public class DSAEnemy extends Enemy{
     private int FERNKAMPF;
     private int AUSWEICHEN;
     private List<DSAWaffe> WAFFEN;
+    private List<DSASpells> SPELLS;
 
-    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW, List<DSAWaffe> WAFFEN){
+    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW, List<DSAWaffe> WAFFEN, List<DSASpells> spells){
         super(species, subSpecies, biom, maxHP, sys);
         this.MUT = MU;
         this.KLUGHEIT = KL;
@@ -39,6 +40,7 @@ public class DSAEnemy extends Enemy{
         this.FERNKAMPF = FK;
         this.AUSWEICHEN = AW;
         this.WAFFEN = WAFFEN;
+        this.SPELLS = spells;
     }
 
     //Getter und Setter
@@ -184,5 +186,22 @@ public class DSAEnemy extends Enemy{
 
     public void removeWaffe(DSAWaffe Waffe) {
         this.WAFFEN.remove(Waffe);
+    }
+
+    //Spells
+    public List getSpells() {
+        return this.SPELLS;
+    }
+
+    public void setSpells(List<DSASpells> Spells) {
+        this.SPELLS = Spells;
+    }
+
+    public void addSpell(DSASpells Spell) {
+        this.SPELLS.add(Spell);
+    }
+
+    public void removeSpell(DSASpells Spell) {
+        this.SPELLS.remove(Spell);
     }
 }
