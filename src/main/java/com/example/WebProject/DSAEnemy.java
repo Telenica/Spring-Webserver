@@ -1,6 +1,7 @@
 package com.example.WebProject;
 
 import jakarta.persistence.Entity;
+import java.util.List;
 
 @Entity
 public class DSAEnemy extends Enemy{
@@ -172,7 +173,7 @@ public class DSAEnemy extends Enemy{
     }
 
     //Waffen
-    public List getWaffen() {
+    public List<DSAWaffe> getWaffen() {
         return WAFFEN;
     }
 
@@ -189,7 +190,7 @@ public class DSAEnemy extends Enemy{
     }
 
     //Spells
-    public List getSpells() {
+    public List<DSASpells> getSpells() {
         return this.SPELLS;
     }
 

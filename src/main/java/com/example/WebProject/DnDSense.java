@@ -1,6 +1,6 @@
 package com.example.WebProject;
 
-public enum Sense {
+public enum DnDSense {
     BLINDSIGHT,
     DARKVISION,
     TREMORSENSE,

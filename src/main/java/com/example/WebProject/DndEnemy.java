@@ -1,6 +1,7 @@
 package com.example.WebProject;
 
 import jakarta.persistence.Entity;
+import java.util.List;
 
 @Entity
 public class DndEnemy extends Enemy {
@@ -17,13 +18,13 @@ public class DndEnemy extends Enemy {
     private int Ini;
     private double Cr;
     private List<DnDWaffe> Waffen;
-    private List<DnDSpells> Spells;
     private List<DnDDamageType> Resistance;
     private List<DnDDamageType> Immunitys;
     private List<DnDSense> Senses;
+    private List<DnDSpells> Spells; 
     private List<DnDAction> Actions;
 
-    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, int Ini, double Cr, List<DnDWaffe> Waffen,List<DnDDamageType> Resistance, List<DnDDamageType> Immunitys, List<Sense> Senses, List<DnDSpells> Spells, List<DnDAction> Actions){
+    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, int Ini, double Cr, List<DnDWaffe> Waffen,List<DnDDamageType> Resistance, List<DnDDamageType> Immunitys, List<DnDSense> Senses, List<DnDSpells> Spells, List<DnDAction> Actions){
         super(species, subspecies, biom, maxHP, sys);
         this.Str = Str;
         this.Dex = Dex;
@@ -33,14 +34,14 @@ public class DndEnemy extends Enemy {
         this.Cha = Cha;
         this.Ac = Ac;
         this.Speed = Speed;
-        @Getter@Setter this.Ini = Ini;
+        this.Ini = Ini;
         this.Cr = Cr;
         this.Waffen = Waffen;
-        @Getter@Setter this.Resistance = Resistance;
-        @Getter@Setter this.Immunitys = Immunitys;
-        @Getter@Setter this.Senses = Senses;
+        this.Resistance = Resistance;
+        this.Immunitys = Immunitys;
+        this.Senses = Senses;
         this.Spells = Spells;
-        @Getter@Setter this.Actions = Actions;
+        this.Actions = Actions;
     }
 
     //Getter und Setter
@@ -116,6 +117,15 @@ public class DndEnemy extends Enemy {
         this.Speed = Speed;
     }
 
+    //Initiative
+    public int getIni(){
+        return Ini;
+    }
+
+    public void setIni(int Ini){
+        this.Ini = Ini;
+    }
+
     //Challenge Rating
     public double getCr(){
         return Cr;
@@ -126,8 +136,8 @@ public class DndEnemy extends Enemy {
     }
 
     //Waffen
-    public List getWaffen() {
-        return WAFFEN;
+    public List<DnDWaffe> getWaffen() {
+        return Waffen;
     }
 
     public void setWaffen(List<DnDWaffe> Waffen) {
@@ -142,8 +152,35 @@ public class DndEnemy extends Enemy {
         this.Waffen.remove(Waffe);
     }
 
+    //Resistenz
+    public List<DnDDamageType> getRes() {
+        return Resistance;
+    }
+
+    public void setRes(List<DnDDamageType> Res) {
+        this.Resistance = Res;
+    }
+
+    //Immunitys
+    public List<DnDDamageType> getImmu() {
+        return Immunitys;
+    }
+
+    public void setImmu(List<DnDDamageType> Immu) {
+        this.Immunitys = Immu;
+    }
+
+    //Senses
+    public List<DnDSense> getSens() {
+        return Senses;
+    }
+
+    public void setSens(List<DnDSense> Sens) {
+        this.Senses = Sens;
+    }
+
     //Spells
-    public List getSpells() {
+    public List<DnDSpells> getSpells() {
         return this.Spells;
     }
 
@@ -156,6 +193,15 @@ public class DndEnemy extends Enemy {
     }
 
     public void removeSpell(DnDSpells Spell) {
-        this.WAFFEN.remove(Spell);
+        this.Spells.remove(Spell);
+    }
+
+    //Actions
+    public List<DnDAction> getAct() {
+        return Actions;
+    }
+
+    public void setAct(List<DnDAction> Act) {
+        this.Actions = Act;
     }
 }
