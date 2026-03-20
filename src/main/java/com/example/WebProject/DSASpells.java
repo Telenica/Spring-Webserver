@@ -1,5 +1,8 @@
 package com.example.WebProject;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public enum DSASpells {
 
     //Magische Handlungen
@@ -672,12 +675,12 @@ public enum DSASpells {
     ZAUBERFEDER("-", 0, "0", "1 Schritt", "10 Minuten", "Objekte (Federkiele)"),
     ;
 
-    private String Probe;
-    private int Zd;
-    private String AsP;
-    private String Reichweite;
-    private String Wd;
-    private String Ziel;
+    @Getter @Setter private String Probe;
+    @Getter @Setter private int Zd;
+    @Getter @Setter private String AsP;
+    @Getter @Setter private String Reichweite;
+    @Getter @Setter private String Wd;
+    @Getter @Setter private String Ziel;
 
     DSASpells(String Probe, int Zd, String AsP, String Reichweite, String Wd, String Ziel){
         this.Probe = Probe;
