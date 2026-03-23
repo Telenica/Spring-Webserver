@@ -10,6 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.WebProject.Enemys.EnemyGroupMember;
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Enumzusätze.Status;
+import com.example.WebProject.Enumzusätze.Systeme;
+import com.example.WebProject.Homebrew.HomeCondition;
+import com.example.WebProject.Homebrew.HomeEnemy;
+import com.example.WebProject.Repository.EnemyGroupMemberRepository;
+import com.example.WebProject.Repository.EnemyRepository;
+import com.example.WebProject.Service.EnemyService;
+
 // testen von laden und speichern von Feinden
 @SpringBootTest
 @Transactional // rollt DB-Änderungen nach jedem Test zurück
@@ -24,13 +34,13 @@ public class EnemyGroupServiceDbTest {
     @Autowired
     private EnemyService enemyService;
 
-    private Enemy goblinTemplate;
-    private Enemy wolfTemplate;
+    private EnemyTemplate goblinTemplate;
+    private EnemyTemplate wolfTemplate;
 
     @BeforeEach
     void setup() {
-        goblinTemplate = enemyRepository.save(new Enemy("Goblin", "Forest Goblin", "Wald", 10));
-        wolfTemplate = enemyRepository.save(new Enemy("Wolf", "Forest Wolf", "Wald", 15));
+        goblinTemplate = enemyRepository.save(new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5));
+        wolfTemplate = enemyRepository.save(new HomeEnemy("Wolf", "Forest Wolf", "Wald", 15, Systeme.HOMEBREW, 20,10));
     }
 
     //Überprüfen ob Gruppenmitglied mit Status und HP gespeichert ist
@@ -77,12 +87,12 @@ public class EnemyGroupServiceDbTest {
     void testAddConditionsPersistence() {
         EnemyGroupMember member = enemyService.memberfromTemplate(goblinTemplate.getId());
 
-        member.addCondition(Condition.FURCHT);
-        member.addCondition(Condition.BETAEUBT);
+        member.addCondition(HomeCondition.FURCHT);
+        member.addCondition(HomeCondition.BETAEUBT);
 
         // Nach speichern erneut laden
         EnemyGroupMember saved = memberRepository.findById(member.getId()).orElseThrow();
-        assertTrue(saved.getConditions().contains(Condition.FURCHT));
-        assertTrue(saved.getConditions().contains(Condition.BETAEUBT));
+        assertTrue(saved.getConditions().contains(HomeCondition.FURCHT));
+        assertTrue(saved.getConditions().contains(HomeCondition.BETAEUBT));
     }
 }

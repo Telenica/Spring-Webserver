@@ -1,4 +1,4 @@
-package com.example.WebProject;
+package com.example.WebProject.Enumzusätze;
 
 public enum Status {
     GESUND, //

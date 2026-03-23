@@ -1,6 +1,8 @@
-package com.example.WebProject;
+package com.example.WebProject.Enemys;
 
 import java.util.Objects;
+
+import com.example.WebProject.Enumzusätze.Systeme;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import jakarta.persistence.Id;
 
 //Feindesklasse mit ID um Spezies, Unterspezies und Biom festzulegen und auszulesen
 @Entity
-public class Enemy {
+public abstract class EnemyTemplate {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,15 +21,15 @@ public class Enemy {
     private String subspecies;
     private String biom;
     private int maxHP;
-
-    Enemy() {}
+    private Systeme system;
 
     //zur Erstellung
-    Enemy(String species, String subspecies, String biom, int maxHP){
+    public EnemyTemplate(String species, String subspecies, String biom, int maxHP, Systeme system){
         this.species = species;
         this.subspecies = subspecies;
         this.biom = biom;
         this.maxHP = maxHP;
+        this.system = system;
     }
 
     //ID herausgeben
@@ -69,6 +71,15 @@ public class Enemy {
 
     public void setMaxHP(int maxHP) {
         this.maxHP = maxHP;
+    }
+
+    //System herausgeben und angeben
+    public Systeme getSystem() {
+        return system;
+    }
+
+    public void setSystem(Systeme system) {
+        this.system = system;
     }
 
     //HashCode erstellen

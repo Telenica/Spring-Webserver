@@ -1,4 +1,4 @@
-package com.example.WebProject;
+package com.example.WebProject.Enemys;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -11,6 +11,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.FetchType;
 import java.util.Set;
+
+import com.example.WebProject.Enumzusätze.Status;
+import com.example.WebProject.Homebrew.HomeCondition;
+
 import java.util.HashSet;
 
 //Feind in Gruppe
@@ -23,16 +27,16 @@ public class EnemyGroupMember {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "enemy_id")
-    private Enemy enemyTemplate;
+    private EnemyTemplate enemyTemplate;
 
     private int currentHP;
 
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @ElementCollection(targetClass = Condition.class)
+    @ElementCollection(targetClass = HomeCondition.class)
     @Enumerated(EnumType.STRING)
-    private Set<Condition> conditions = new HashSet<>();
+    private Set<HomeCondition> conditions = new HashSet<>();
 
     //ID zurückgeben
     public Long getId() { 
@@ -40,11 +44,11 @@ public class EnemyGroupMember {
     }
 
     //herausgeben und angeben des Feindes der zur Gruppe dazu soll
-    public Enemy getEnemyTemplate() { 
+    public EnemyTemplate getEnemyTemplate() { 
         return enemyTemplate; 
     }
 
-    public void setEnemyTemplate(Enemy enemyTemplate) { 
+    public void setEnemyTemplate(EnemyTemplate enemyTemplate) { 
         this.enemyTemplate = enemyTemplate; 
     }
 
@@ -76,15 +80,15 @@ public class EnemyGroupMember {
     }
 
     //Gesundheitszustand anpassen und herausgeben
-    public Set<Condition> getConditions() { 
+    public Set<HomeCondition> getConditions() { 
         return conditions; 
     }
 
-    public void addCondition(Condition condition) { 
+    public void addCondition(HomeCondition condition) { 
         conditions.add(condition); 
     }
 
-    public void removeCondition(Condition condition) { 
+    public void removeCondition(HomeCondition condition) { 
         conditions.remove(condition); 
     }
 

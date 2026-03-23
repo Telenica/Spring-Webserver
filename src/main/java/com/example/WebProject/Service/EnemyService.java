@@ -1,6 +1,12 @@
-package com.example.WebProject;
+package com.example.WebProject.Service;
 
 import org.springframework.stereotype.Service;
+
+import com.example.WebProject.Enemys.EnemyGroupMember;
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Repository.EnemyGroupMemberRepository;
+import com.example.WebProject.Repository.EnemyRepository;
+
 import java.util.List;
 
 // Erstellung von Gruppenteilnehmern
@@ -17,7 +23,7 @@ public class EnemyService {
 
     //Gruppenmitglied aus Template erstellen
     public EnemyGroupMember memberfromTemplate(Long enemyId) {
-        Enemy template = enemyRepository.findById(enemyId).orElseThrow(() -> new RuntimeException("Enemy not found"));
+        EnemyTemplate template = enemyRepository.findById(enemyId).orElseThrow(() -> new RuntimeException("Enemy not found"));
         
         EnemyGroupMember member = new EnemyGroupMember();
         member.setEnemyTemplate(template);

@@ -7,14 +7,21 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.example.WebProject.Enemys.EnemyGroupMember;
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Enumzusätze.Status;
+import com.example.WebProject.Enumzusätze.Systeme;
+import com.example.WebProject.Homebrew.HomeCondition;
+import com.example.WebProject.Homebrew.HomeEnemy;
+
 // Unit-Tests für Gruppenlogik
 @SpringBootTest
 public class EnemyGroupServiceTest {
-    private Enemy goblinTemplate;
+    private EnemyTemplate goblinTemplate;
 
     @BeforeEach
     void setup() {
-        goblinTemplate = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        goblinTemplate = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
     }
 
     @Test
@@ -87,25 +94,25 @@ public class EnemyGroupServiceTest {
 
         assertTrue(member.getConditions().isEmpty());
 
-        member.addCondition(Condition.FURCHT);
-        member.addCondition(Condition.BETAEUBT);
+        member.addCondition(HomeCondition.FURCHT);
+        member.addCondition(HomeCondition.BETAEUBT);
 
-        assertTrue(member.getConditions().contains(Condition.FURCHT));
-        assertTrue(member.getConditions().contains(Condition.BETAEUBT));
+        assertTrue(member.getConditions().contains(HomeCondition.FURCHT));
+        assertTrue(member.getConditions().contains(HomeCondition.BETAEUBT));
         assertEquals(2, member.getConditions().size());
 
-        member.removeCondition(Condition.BETAEUBT);
+        member.removeCondition(HomeCondition.BETAEUBT);
 
-        assertTrue(member.getConditions().contains(Condition.FURCHT));
+        assertTrue(member.getConditions().contains(HomeCondition.FURCHT));
         assertEquals(1, member.getConditions().size());
 
-        member.removeCondition(Condition.FURCHT);
+        member.removeCondition(HomeCondition.FURCHT);
 
         assertTrue(member.getConditions().isEmpty());
         assertEquals(0, member.getConditions().size());
 
-        member.addCondition(Condition.FURCHT);
-        member.addCondition(Condition.FURCHT);
+        member.addCondition(HomeCondition.FURCHT);
+        member.addCondition(HomeCondition.FURCHT);
 
         assertEquals(1, member.getConditions().size());
     }

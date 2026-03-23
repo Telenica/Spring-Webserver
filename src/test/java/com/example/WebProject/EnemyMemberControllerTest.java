@@ -10,6 +10,14 @@ import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.example.WebProject.Controller.EnemyMemberController;
+import com.example.WebProject.Enemys.EnemyGroupMember;
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Enumzusätze.Systeme;
+import com.example.WebProject.Homebrew.HomeEnemy;
+import com.example.WebProject.Service.EnemyGroupService;
+import com.example.WebProject.Service.EnemyService;
+
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
@@ -34,7 +42,7 @@ class EnemyMemberControllerTest {
     @Test
     void testCreateMember() throws Exception {
 
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
         EnemyGroupMember member = new EnemyGroupMember();
         member.setEnemyTemplate(goblin);
         member.setCurrentHP(10);
@@ -50,8 +58,8 @@ class EnemyMemberControllerTest {
     @Test
     void testCreateGroup() throws Exception {
         
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
-        Enemy ork = new Enemy("Ork", "Hill Ork", "Hills", 15);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
+        EnemyTemplate ork = new HomeEnemy("Ork", "Hill Ork", "Hills", 15, Systeme.HOMEBREW, 50, 20);
 
         EnemyGroupMember m1 = new EnemyGroupMember();
         m1.setEnemyTemplate(goblin);
@@ -75,7 +83,7 @@ class EnemyMemberControllerTest {
     @Test
     void testRandomGroupAll() throws Exception {
 
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
         EnemyGroupMember member = new EnemyGroupMember();
         member.setEnemyTemplate(goblin);
         member.setCurrentHP(12);
@@ -92,7 +100,7 @@ class EnemyMemberControllerTest {
     @Test
     void testRandomGroupByBiomes() throws Exception {
 
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
         EnemyGroupMember member = new EnemyGroupMember();
         member.setEnemyTemplate(goblin);
         member.setCurrentHP(8);
@@ -111,7 +119,7 @@ class EnemyMemberControllerTest {
     @Test
     void testRandomGroupBySpecies() throws Exception {
 
-        Enemy goblin = new Enemy("Goblin", "Forest Goblin", "Wald", 10);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
         EnemyGroupMember member = new EnemyGroupMember();
         member.setEnemyTemplate(goblin);
         member.setCurrentHP(14);
