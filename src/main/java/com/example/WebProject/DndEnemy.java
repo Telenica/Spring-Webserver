@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import java.util.List;
 
 @Entity
-public class DndEnemy extends Enemy {
+public class DndEnemy extends EnemyTemplate {
 
     //Basiswerte
     private int Str;

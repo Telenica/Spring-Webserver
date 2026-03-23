@@ -24,8 +24,8 @@ public class EnemyGroupServiceDbTest {
     @Autowired
     private EnemyService enemyService;
 
-    private Enemy goblinTemplate;
-    private Enemy wolfTemplate;
+    private EnemyTemplate goblinTemplate;
+    private EnemyTemplate wolfTemplate;
 
     @BeforeEach
     void setup() {

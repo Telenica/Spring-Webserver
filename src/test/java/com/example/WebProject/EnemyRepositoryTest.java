@@ -16,10 +16,10 @@ public class EnemyRepositoryTest {
 
     @Test
     void testSaveAndFindById() {
-        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
-        Enemy saved = enemyRepository.save(goblin);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
+        EnemyTemplate saved = enemyRepository.save(goblin);
 
-        Optional<Enemy> found = enemyRepository.findById(saved.getId());
+        Optional<EnemyTemplate> found = enemyRepository.findById(saved.getId());
         assertTrue(found.isPresent());
         assertEquals("Goblin", found.get().getSpecies());
     }
@@ -39,10 +39,10 @@ public class EnemyRepositoryTest {
         enemyRepository.save(new HomeEnemy("Wolf", "Forest Wolf", "Forest", 15, Systeme.HOMEBREW, 25, 10));
         enemyRepository.save(new HomeEnemy("Orc", "Hill Orc", "Hills", 30, Systeme.HOMEBREW, 50, 20));
 
-        List<Enemy> goblins = enemyRepository.findBySpecies("Goblin");
-        List<Enemy> wolves = enemyRepository.findBySpecies("Wolf");
-        List<Enemy> forestEnemies = enemyRepository.findByBiom("Forest");
-        List<Enemy> hillOrcs = enemyRepository.findBySubspecies("Hill Orc");
+        List<EnemyTemplate> goblins = enemyRepository.findBySpecies("Goblin");
+        List<EnemyTemplate> wolves = enemyRepository.findBySpecies("Wolf");
+        List<EnemyTemplate> forestEnemies = enemyRepository.findByBiom("Forest");
+        List<EnemyTemplate> hillOrcs = enemyRepository.findBySubspecies("Hill Orc");
 
         assertEquals(1, goblins.size());
         assertTrue(goblins.stream().anyMatch(e -> e.getSubSpecies().equals("Forest Goblin")));

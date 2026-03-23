@@ -8,8 +8,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 //Alle passenden Spezies, Unterspezies und Biome finden
 @RepositoryRestResource(collectionResourceRel = "enemys", path = "enemys")
-public interface EnemyRepository extends JpaRepository<Enemy, Long>{
-    List<Enemy> findBySubspecies(@Param("subspecies") String subspecies);
-    List<Enemy> findBySpecies(@Param("species") String species);
-    List<Enemy> findByBiom(@Param("biom") String biom);
+public interface EnemyRepository extends JpaRepository<EnemyTemplate, Long>{
+    List<EnemyTemplate> findBySubspecies(@Param("subspecies") String subspecies);
+    List<EnemyTemplate> findBySpecies(@Param("species") String species);
+    List<EnemyTemplate> findByBiom(@Param("biom") String biom);
 }

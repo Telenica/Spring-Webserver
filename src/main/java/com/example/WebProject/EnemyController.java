@@ -34,8 +34,8 @@ public class EnemyController {
 
     //Get Befehl
     @GetMapping("/enemys")
-     CollectionModel<EntityModel<Enemy>> all() {
-        List<EntityModel<Enemy>> enemys = repository.findAll().stream()
+     CollectionModel<EntityModel<EnemyTemplate>> all() {
+        List<EntityModel<EnemyTemplate>> enemys = repository.findAll().stream()
         .map(assembler::toModel) //verkürzte Variante von EntityModel um Link zu erzeugen
         .collect(Collectors.toList());
         
@@ -44,8 +44,8 @@ public class EnemyController {
 
     //Post Befehl
     @PostMapping("/enemys")
-    ResponseEntity<?> newEnemy(@RequestBody Enemy newEnemy){
-        EntityModel<Enemy> entityModel = assembler.toModel(repository.save(newEnemy));
+    ResponseEntity<?> newEnemy(@RequestBody EnemyTemplate newEnemy){
+        EntityModel<EnemyTemplate> entityModel = assembler.toModel(repository.save(newEnemy));
 
         return ResponseEntity //
             .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
@@ -56,8 +56,8 @@ public class EnemyController {
 
     //Get Befehl
     @GetMapping("/enemys/{id}")
-    EntityModel<Enemy> one(@PathVariable Long id) {
-        Enemy enemy = repository.findById(id)
+    EntityModel<EnemyTemplate> one(@PathVariable Long id) {
+        EnemyTemplate enemy = repository.findById(id)
             .orElseThrow(() -> new EnemyNotFoundException(id));
         
         return assembler.toModel(enemy); //verkürzte Variante von EntityModel um Link zu erzeugen
@@ -65,8 +65,8 @@ public class EnemyController {
 
     //Put Befehl
     @PutMapping("/enemys/{id}")
-    ResponseEntity<?> replaceEnemy(@RequestBody Enemy newEnemy, @PathVariable Long id) {
-        Enemy updatedEnemy = repository.findById(id) //
+    ResponseEntity<?> replaceEnemy(@RequestBody EnemyTemplate newEnemy, @PathVariable Long id) {
+        EnemyTemplate updatedEnemy = repository.findById(id) //
         .map(enemy -> {
             enemy.setSpecies(newEnemy.getSpecies());
             enemy.setSubSpecies(newEnemy.getSubSpecies());
@@ -78,7 +78,7 @@ public class EnemyController {
             return repository.save(newEnemy);
         });
 
-        EntityModel<Enemy> entityModel = assembler.toModel(updatedEnemy);
+        EntityModel<EnemyTemplate> entityModel = assembler.toModel(updatedEnemy);
 
         return ResponseEntity //
             .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //

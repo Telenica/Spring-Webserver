@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import java.util.List;
 
 @Entity
-public class DSAEnemy extends Enemy{
+public class DSAEnemy extends EnemyTemplate{
     
     //Basiswerte
     private int MUT;

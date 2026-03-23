@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 // Unit-Tests für Gruppenlogik
 @SpringBootTest
 public class EnemyGroupServiceTest {
-    private Enemy goblinTemplate;
+    private EnemyTemplate goblinTemplate;
 
     @BeforeEach
     void setup() {

@@ -23,7 +23,7 @@ public class EnemyGroupMember {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "enemy_id")
-    private Enemy enemyTemplate;
+    private EnemyTemplate enemyTemplate;
 
     private int currentHP;
 
@@ -40,11 +40,11 @@ public class EnemyGroupMember {
     }
 
     //herausgeben und angeben des Feindes der zur Gruppe dazu soll
-    public Enemy getEnemyTemplate() { 
+    public EnemyTemplate getEnemyTemplate() { 
         return enemyTemplate; 
     }
 
-    public void setEnemyTemplate(Enemy enemyTemplate) { 
+    public void setEnemyTemplate(EnemyTemplate enemyTemplate) { 
         this.enemyTemplate = enemyTemplate; 
     }
 

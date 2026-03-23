@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 
 //Feindesklasse mit ID um Spezies, Unterspezies und Biom festzulegen und auszulesen
 @Entity
-public abstract class Enemy {
+public abstract class EnemyTemplate {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public abstract class Enemy {
     private Systeme system;
 
     //zur Erstellung
-    public Enemy(String species, String subspecies, String biom, int maxHP, Systeme system){
+    public EnemyTemplate(String species, String subspecies, String biom, int maxHP, Systeme system){
         this.species = species;
         this.subspecies = subspecies;
         this.biom = biom;

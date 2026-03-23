@@ -18,7 +18,7 @@ public class EnemyService {
 
     //Gruppenmitglied aus Template erstellen
     public EnemyGroupMember memberfromTemplate(Long enemyId) {
-        Enemy template = enemyRepository.findById(enemyId).orElseThrow(() -> new RuntimeException("Enemy not found"));
+        EnemyTemplate template = enemyRepository.findById(enemyId).orElseThrow(() -> new RuntimeException("Enemy not found"));
         
         EnemyGroupMember member = new EnemyGroupMember();
         member.setEnemyTemplate(template);

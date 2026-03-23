@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 
 //Nur ein Link statt mehrere an Enemy
 @Component
-public class EnemyModelAssembler implements RepresentationModelAssembler<Enemy, EntityModel<Enemy>>{
+public class EnemyModelAssembler implements RepresentationModelAssembler<EnemyTemplate, EntityModel<EnemyTemplate>>{
     @Override
-    public EntityModel<Enemy> toModel(Enemy enemy) {
+    public EntityModel<EnemyTemplate> toModel(EnemyTemplate enemy) {
 
         return EntityModel.of(enemy, //
             linkTo(methodOn(EnemyController.class).one(enemy.getId())).withSelfRel(),

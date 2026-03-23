@@ -36,7 +36,7 @@ public class EnemyGroupControllerTest {
     //Getter für Alle testen
     @Test
     void testGetAllEnemies() throws Exception {
-        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
 
         // Repository liefert 1 Enemy
         when(repository.findAll()).thenReturn(List.of(goblin));
@@ -51,7 +51,7 @@ public class EnemyGroupControllerTest {
     @Test
     void testGetOneEnemy() throws Exception {
 
-        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
 
         when(repository.findById(1L)).thenReturn(Optional.of(goblin));
         when(assembler.toModel(goblin)).thenReturn(EntityModel.of(goblin));
@@ -63,11 +63,11 @@ public class EnemyGroupControllerTest {
     @Test
     void testCreateEnemy() throws Exception {
 
-        Enemy goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
-        EntityModel<Enemy> model = EntityModel.of(goblin);
+        EnemyTemplate goblin = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
+        EntityModel<EnemyTemplate> model = EntityModel.of(goblin);
         model.add(Link.of("http://localhost/enemys/1").withSelfRel());
 
-        when(repository.save(any(Enemy.class))).thenReturn(goblin);
+        when(repository.save(any(EnemyTemplate.class))).thenReturn(goblin);
         when(assembler.toModel(goblin)).thenReturn(model);
 
         mockMvc.perform(post("/enemys").contentType("application/json").content(objectMapper.writeValueAsString(goblin)))
@@ -78,13 +78,13 @@ public class EnemyGroupControllerTest {
     @Test
     void testReplaceEnemy() throws Exception {
 
-        Enemy existing = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
-        Enemy updated = new HomeEnemy("Orc", "Hill Orc", "Berge", 20, Systeme.HOMEBREW, 50, 20);
+        EnemyTemplate existing = new HomeEnemy("Goblin", "Forest Goblin", "Forest", 10, Systeme.HOMEBREW, 10, 5);
+        EnemyTemplate updated = new HomeEnemy("Orc", "Hill Orc", "Berge", 20, Systeme.HOMEBREW, 50, 20);
 
         when(repository.findById(1L)).thenReturn(Optional.of(existing));
-        when(repository.save(any(Enemy.class))).thenReturn(updated);
+        when(repository.save(any(EnemyTemplate.class))).thenReturn(updated);
 
-        EntityModel<Enemy> model = EntityModel.of(updated);
+        EntityModel<EnemyTemplate> model = EntityModel.of(updated);
         model.add(Link.of("http://localhost/enemys/1").withSelfRel());
 
         when(assembler.toModel(updated)).thenReturn(model);

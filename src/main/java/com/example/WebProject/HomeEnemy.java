@@ -3,7 +3,7 @@ package com.example.WebProject;
 import jakarta.persistence.Entity;
 
 @Entity
-public class HomeEnemy extends Enemy{
+public class HomeEnemy extends EnemyTemplate{
     
     //Basiswerte
     private int attacke;
