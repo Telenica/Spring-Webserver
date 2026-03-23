@@ -1,5 +1,8 @@
 package com.example.WebProject.DnD;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public enum DnDWaffe{
     //Simple Melee Weapons
     CLUB("1d4" , "bludgening"),
@@ -49,19 +52,11 @@ public enum DnDWaffe{
     LONGBOW("1d8" , "piercing"),
     NET("0" , "none");
 
-    private final String damage;
-    private final String damageType;
+    @Getter @Setter private String damage;
+    @Getter @Setter private String damageType;
 
     DnDWaffe(String damage, String damageType) {
         this.damage = damage;
         this.damageType = damageType;
-    }
-
-    public String getDamage() {
-        return damage;
-    }
-
-    public String getDamageType() {
-        return damageType;
     }
 }

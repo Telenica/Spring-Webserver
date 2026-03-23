@@ -1,6 +1,9 @@
 package com.example.WebProject.DnD;
 
 import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 import com.example.WebProject.Enemys.EnemyTemplate;
@@ -10,22 +13,22 @@ import com.example.WebProject.Enumzusätze.Systeme;
 public class DndEnemy extends EnemyTemplate {
 
     //Basiswerte
-    private int Str;
-    private int Dex;
-    private int Con;
-    private int Int;
-    private int Wis;
-    private int Cha;
-    private int Ac;
-    private int Speed;
-    private int Ini;
-    private double Cr;
+    @Getter @Setter private int Str;
+    @Getter @Setter private int Dex;
+    @Getter @Setter private int Con;
+    @Getter @Setter private int Int;
+    @Getter @Setter private int Wis;
+    @Getter @Setter private int Cha;
+    @Getter @Setter private int Ac;
+    @Getter @Setter private int Speed;
+    @Getter @Setter private int Ini;
+    @Getter @Setter private double Cr;
     private List<DnDWaffe> Waffen;
-    private List<DnDDamageType> Resistance;
-    private List<DnDDamageType> Immunitys;
-    private List<DnDSense> Senses;
+    @Getter @Setter private List<DnDDamageType> Resistance;
+    @Getter @Setter private List<DnDDamageType> Immunitys;
+    @Getter @Setter private List<DnDSense> Senses;
     private List<DnDSpells> Spells; 
-    private List<DnDAction> Actions;
+    @Getter @Setter private List<DnDAction> Actions;
 
     public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, int Ini, double Cr, List<DnDWaffe> Waffen,List<DnDDamageType> Resistance, List<DnDDamageType> Immunitys, List<DnDSense> Senses, List<DnDSpells> Spells, List<DnDAction> Actions){
         super(species, subspecies, biom, maxHP, sys);
@@ -47,97 +50,8 @@ public class DndEnemy extends EnemyTemplate {
         this.Actions = Actions;
     }
 
-    //Getter und Setter
-    //Strength
-    public int getStr(){
-        return Str;
-    }
-
-    public void setStr(int Str){
-        this.Str = Str;
-    }
-
-    //Dexterity
-    public int getDex(){
-        return Dex;
-    }
-
-    public void setDex(int Dex){
-        this.Dex = Dex;
-    }
-
-    //Constitution
-    public int getCon(){
-        return Con;
-    }
-
-    public void setCon(int con){
-        this.Con = con;
-    }
-
-    //Intelligence
-    public int getInt(){
-        return Int;
-    }
-
-    public void setInt(int Int){
-        this.Int = Int;
-    }
-
-    //Wisdome
-    public int getWis(){
-        return Wis;
-    }
-
-    public void setWis(int Wis){
-        this.Wis = Wis;
-    }
-
-    //Charisma
-    public int getCha(){
-        return Cha;
-    }
-
-    public void setCha(int Cha){
-        this.Cha = Cha;
-    }
-
-    //Armor Class
-    public int getAc(){
-        return Ac;
-    }
-
-    public void setAc(int Ac){
-        this.Ac = Ac;
-    }
-
-    //Speed
-    public int getSpeed(){
-        return Speed;
-    }
-
-    public void setSpeed(int Speed){
-        this.Speed = Speed;
-    }
-
-    //Initiative
-    public int getIni(){
-        return Ini;
-    }
-
-    public void setIni(int Ini){
-        this.Ini = Ini;
-    }
-
-    //Challenge Rating
-    public double getCr(){
-        return Cr;
-    }
-
-    public void setCr(double Cr){
-        this.Cr = Cr;
-    }
-
+    //Spezielle Getter und Setter
+    
     //Waffen
     public List<DnDWaffe> getWaffen() {
         return Waffen;
@@ -155,33 +69,6 @@ public class DndEnemy extends EnemyTemplate {
         this.Waffen.remove(Waffe);
     }
 
-    //Resistenz
-    public List<DnDDamageType> getRes() {
-        return Resistance;
-    }
-
-    public void setRes(List<DnDDamageType> Res) {
-        this.Resistance = Res;
-    }
-
-    //Immunitys
-    public List<DnDDamageType> getImmu() {
-        return Immunitys;
-    }
-
-    public void setImmu(List<DnDDamageType> Immu) {
-        this.Immunitys = Immu;
-    }
-
-    //Senses
-    public List<DnDSense> getSens() {
-        return Senses;
-    }
-
-    public void setSens(List<DnDSense> Sens) {
-        this.Senses = Sens;
-    }
-
     //Spells
     public List<DnDSpells> getSpells() {
         return this.Spells;
@@ -197,14 +84,5 @@ public class DndEnemy extends EnemyTemplate {
 
     public void removeSpell(DnDSpells Spell) {
         this.Spells.remove(Spell);
-    }
-
-    //Actions
-    public List<DnDAction> getAct() {
-        return Actions;
-    }
-
-    public void setAct(List<DnDAction> Act) {
-        this.Actions = Act;
     }
 }

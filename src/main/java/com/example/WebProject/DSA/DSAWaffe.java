@@ -1,5 +1,8 @@
 package com.example.WebProject.DSA;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public enum DSAWaffe{
     //ARMBRUESTE
     ANGBARERMAUERWEHR ("1W6+2", "1/12", "0/0", "10/30/50"),
@@ -601,10 +604,10 @@ public enum DSAWaffe{
     TUZAKMESSER("1W6+6", "0", "0/0","mittel"),
     ZWEIHAENDER("2W6+4", "0", "0/-3","mittel");
 
-    private String damage;
-    private String loading;
-    private String AtPaMod;
-    private String distance;
+    @Getter @Setter private String damage;
+    @Getter @Setter private String loading;
+    @Getter @Setter private String AtPaMod;
+    @Getter @Setter private String distance;
     
 
     DSAWaffe(String damage, String loading, String AtPaMod, String distance){
@@ -612,22 +615,6 @@ public enum DSAWaffe{
         this.loading = loading;
         this.distance = distance;
         this.AtPaMod = AtPaMod;
-    }
-
-    public String getDamage(){
-        return damage;
-    }
-
-    public String getActions(){
-        return loading;
-    }
-    
-    public String getAtPaMod(){
-        return AtPaMod;
-    }
-
-    public String getDistance(){
-        return distance;
     }
 
 }

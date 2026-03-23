@@ -1,6 +1,9 @@
 package com.example.WebProject.DSA;
 
 import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 import com.example.WebProject.Enemys.EnemyTemplate;
@@ -10,20 +13,20 @@ import com.example.WebProject.Enumzusätze.Systeme;
 public class DSAEnemy extends EnemyTemplate{
     
     //Basiswerte
-    private int MUT;
-    private int KLUGHEIT;
-    private int INTUITION;
-    private int CHARISMA;
-    private int FINGERFERTIGKEIT;
-    private int GEWANDTHEIT;
-    private int KONSTITUTION;
-    private int KOERPERKRAFT;
-    private int GESCHWINDIGKEIT;
-    private int INIBASIS;
+    @Getter @Setter private int MUT;
+    @Getter @Setter private int KLUGHEIT;
+    @Getter @Setter private int INTUITION;
+    @Getter @Setter private int CHARISMA;
+    @Getter @Setter private int FINGERFERTIGKEIT;
+    @Getter @Setter private int GEWANDTHEIT;
+    @Getter @Setter private int KONSTITUTION;
+    @Getter @Setter private int KOERPERKRAFT;
+    @Getter @Setter private int GESCHWINDIGKEIT;
+    @Getter @Setter private int INIBASIS;
     private int ATTACKE;
     private int PARADE;
-    private int FERNKAMPF;
-    private int AUSWEICHEN;
+    @Getter @Setter private int FERNKAMPF;
+    @Getter @Setter private int AUSWEICHEN;
     private List<DSAWaffe> WAFFEN;
     private List<DSASpells> SPELLS;
 
@@ -47,97 +50,7 @@ public class DSAEnemy extends EnemyTemplate{
         this.SPELLS = spells;
     }
 
-    //Getter und Setter
-    
-    //Mut
-    public int getMU() {
-        return MUT;
-    }
-    
-    public void setMU(int MU) {
-        this.MUT = MU;
-    }
-
-    //Klugheit
-    public int getKL() {
-        return KLUGHEIT;
-    }
-    
-    public void setKL(int KL) {
-        this.KLUGHEIT = KL;
-    }
-
-    //Intuition
-    public int getIN() {
-        return INTUITION;
-    }
-    
-    public void setIN(int IN) {
-        this.INTUITION = IN;
-    }
-
-    //Charisma
-    public int getCH() {
-        return CHARISMA;
-    }
-    
-    public void setCH(int CH) {
-        this.CHARISMA = CH;
-    }
-
-    //Fingerfertigkeit
-    public int getFF() {
-        return FINGERFERTIGKEIT;
-    }
-    
-    public void setFF(int FF) {
-        this.FINGERFERTIGKEIT = FF;
-    }
-
-    //Gewandheit
-    public int getGW() {
-        return GEWANDTHEIT;
-    }
-
-    public void setGW(int GW) {
-        this.GEWANDTHEIT = GW;
-    }
-
-    //Konstitution
-    public int getKO() {
-        return KONSTITUTION;
-    }
-
-    public void setKO(int KO){
-        this.KONSTITUTION = KO;
-    }
-
-    //Koerperkraft
-    public int getKK() {
-        return KOERPERKRAFT;
-    }
-    
-    public void setKK(int KK){
-        this.KOERPERKRAFT = KK;
-    }
-
-    //Geschwindigkeit
-    public int getGS() {
-        return GESCHWINDIGKEIT;
-    }
-
-    public void setGS(int GS) {
-        this.GESCHWINDIGKEIT = GS;
-    }
-
-    //INI-Basiswert
-    public int getIB() {
-        return INIBASIS;
-    }
-
-    public void setIB(int IB) {
-        this.INIBASIS = IB;
-    }
+    //Spezielle Getter und Setter
 
     //Attacke
     public int getAT() {
@@ -155,24 +68,6 @@ public class DSAEnemy extends EnemyTemplate{
 
     public void setPA(int PA) {
         this.PARADE = PA;
-    }
-
-    //Fernkampf
-    public int getFK() {
-        return FERNKAMPF;
-    }
-
-    public void setFK(int FK) {
-        this.FERNKAMPF = FK;
-    }
-
-    //Ausweichen
-    public int getAW() {
-        return AUSWEICHEN;
-    }
-
-    public void setAW(int AW) {
-        this.AUSWEICHEN = AW;
     }
 
     //Waffen
