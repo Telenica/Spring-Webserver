@@ -1,6 +1,8 @@
 package com.example.WebProject.Homebrew;
 
-public enum HomeCondition {
+import com.example.WebProject.Enumzusätze.ConditionInterface;
+
+public enum HomeCondition implements ConditionInterface{
     BETAEUBT,
     ENTRUECKT,
     FURCHT,

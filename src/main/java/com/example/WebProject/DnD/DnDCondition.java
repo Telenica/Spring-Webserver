@@ -1,6 +1,8 @@
 package com.example.WebProject.DnD;
 
-public enum DnDCondition {
+import com.example.WebProject.Enumzusätze.ConditionInterface;
+
+public enum DnDCondition implements ConditionInterface {
     BLINDED,
     CHARMED,
     DEAFEND,

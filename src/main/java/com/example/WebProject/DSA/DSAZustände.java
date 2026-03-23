@@ -1,6 +1,8 @@
 package com.example.WebProject.DSA;
 
-public enum DSAZustände {
+import com.example.WebProject.Enumzusätze.ConditionInterface;
+
+public enum DSAZustände implements ConditionInterface{
     ANIMOSITAET,
     BAUMARTIG,
     BEGEHREN,

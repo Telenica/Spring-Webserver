@@ -12,6 +12,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.FetchType;
 import java.util.Set;
 
+import com.example.WebProject.DSA.DSAZustände;
+import com.example.WebProject.DnD.DnDCondition;
+import com.example.WebProject.Enumzusätze.ConditionInterface;
 import com.example.WebProject.Enumzusätze.Status;
 import com.example.WebProject.Homebrew.HomeCondition;
 
@@ -36,7 +39,7 @@ public class EnemyGroupMember {
 
     @ElementCollection(targetClass = HomeCondition.class)
     @Enumerated(EnumType.STRING)
-    private Set<HomeCondition> conditions = new HashSet<>();
+    private Set<ConditionInterface> conditions = new HashSet<>();
 
     //ID zurückgeben
     public Long getId() { 
@@ -80,16 +83,71 @@ public class EnemyGroupMember {
     }
 
     //Gesundheitszustand anpassen und herausgeben
-    public Set<HomeCondition> getConditions() { 
+    public Set<ConditionInterface> getConditions() { 
         return conditions; 
     }
 
-    public void addCondition(HomeCondition condition) { 
-        conditions.add(condition); 
+    public void addCondition(ConditionInterface condition) {
+        switch (enemyTemplate.getSystem()) {
+            case DND: 
+                if (condition instanceof DnDCondition) {
+                    conditions.add(condition);                    
+                }
+                else {
+                    System.err.println("not from Type DnDCondition");
+                }
+            case DSA:
+                if (condition instanceof DSAZustände) {
+                    conditions.add(condition);                    
+                }
+                else {
+                    System.err.println("not from Type DSAZustände");
+                }
+            case HOMEBREW:
+                if (condition instanceof HomeCondition) {
+                    conditions.add(condition);                    
+                }
+                else {
+                    System.err.println("not from Type HomeCondition");
+                }
+            default:
+                break;
+        } 
     }
 
-    public void removeCondition(HomeCondition condition) { 
+    public void removeCondition(ConditionInterface condition) { 
         conditions.remove(condition); 
+    }
+
+    public void setConditions(Set<ConditionInterface> conditions){
+        switch (enemyTemplate.getSystem()) {
+            case DND: 
+                if (conditions.stream().allMatch(c -> c instanceof DnDCondition)) {
+                    this.conditions = conditions;                    
+                }
+                else {
+                    System.err.println("not from Type DnDCondition");
+                }
+                break;
+            case DSA:
+                if (conditions.stream().allMatch(c -> c instanceof DSAZustände)) {
+                    this.conditions = conditions;                    
+                }
+                else {
+                    System.err.println("not from Type DSAZustände");
+                }
+                break;
+            case HOMEBREW:
+                if (conditions.stream().allMatch(c -> c instanceof HomeCondition)) {
+                    this.conditions = conditions;                    
+                }
+                else {
+                    System.err.println("not from Type HomeCondition");
+                }
+                break;
+            default:
+                break;
+        } 
     }
 
 }
