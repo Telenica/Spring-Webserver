@@ -1,6 +1,8 @@
-package com.example.WebProject;
+package com.example.WebProject.Enemys;
 
 import java.util.Objects;
+
+import com.example.WebProject.Enumzusätze.Systeme;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
-package com.example.WebProject;
+package com.example.WebProject.Homebrew;
 
-public enum Condition {
+public enum HomeCondition {
     BETAEUBT,
     ENTRUECKT,
     FURCHT,

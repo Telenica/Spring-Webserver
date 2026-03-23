@@ -1,4 +1,4 @@
-package com.example.WebProject;
+package com.example.WebProject.Controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Repository.EnemyRepository;
+
 //import org.springframework.hateoas.EntityModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 

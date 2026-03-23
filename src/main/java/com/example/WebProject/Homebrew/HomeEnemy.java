@@ -1,4 +1,7 @@
-package com.example.WebProject;
+package com.example.WebProject.Homebrew;
+
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Enumzusätze.Systeme;
 
 import jakarta.persistence.Entity;
 

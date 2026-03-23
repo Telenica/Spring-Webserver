@@ -1,4 +1,4 @@
-package com.example.WebProject;
+package com.example.WebProject.Homebrew;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,10 +6,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.example.WebProject.Enumzusätze.Systeme;
+import com.example.WebProject.Repository.EnemyRepository;
+
 //Datenbank mit allen Feinden
 @Configuration
-public class LoadDatabase {
-    private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+public class HomeEnemyDatabase {
+    private static final Logger log = LoggerFactory.getLogger(HomeEnemyDatabase.class);
 
     @Bean
     CommandLineRunner initDatabase(EnemyRepository repository) {

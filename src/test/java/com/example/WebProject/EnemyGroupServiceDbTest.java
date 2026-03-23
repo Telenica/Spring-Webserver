@@ -10,6 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.WebProject.Enemys.EnemyGroupMember;
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Enumzusätze.Status;
+import com.example.WebProject.Enumzusätze.Systeme;
+import com.example.WebProject.Homebrew.HomeCondition;
+import com.example.WebProject.Homebrew.HomeEnemy;
+import com.example.WebProject.Repository.EnemyGroupMemberRepository;
+import com.example.WebProject.Repository.EnemyRepository;
+import com.example.WebProject.Service.EnemyService;
+
 // testen von laden und speichern von Feinden
 @SpringBootTest
 @Transactional // rollt DB-Änderungen nach jedem Test zurück
@@ -77,12 +87,12 @@ public class EnemyGroupServiceDbTest {
     void testAddConditionsPersistence() {
         EnemyGroupMember member = enemyService.memberfromTemplate(goblinTemplate.getId());
 
-        member.addCondition(Condition.FURCHT);
-        member.addCondition(Condition.BETAEUBT);
+        member.addCondition(HomeCondition.FURCHT);
+        member.addCondition(HomeCondition.BETAEUBT);
 
         // Nach speichern erneut laden
         EnemyGroupMember saved = memberRepository.findById(member.getId()).orElseThrow();
-        assertTrue(saved.getConditions().contains(Condition.FURCHT));
-        assertTrue(saved.getConditions().contains(Condition.BETAEUBT));
+        assertTrue(saved.getConditions().contains(HomeCondition.FURCHT));
+        assertTrue(saved.getConditions().contains(HomeCondition.BETAEUBT));
     }
 }

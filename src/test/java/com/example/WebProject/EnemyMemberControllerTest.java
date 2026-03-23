@@ -10,6 +10,14 @@ import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.example.WebProject.Controller.EnemyMemberController;
+import com.example.WebProject.Enemys.EnemyGroupMember;
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Enumzusätze.Systeme;
+import com.example.WebProject.Homebrew.HomeEnemy;
+import com.example.WebProject.Service.EnemyGroupService;
+import com.example.WebProject.Service.EnemyService;
+
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;

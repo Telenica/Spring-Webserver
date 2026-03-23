@@ -1,0 +1,23 @@
+package com.example.WebProject.DnD;
+
+public enum DnDCondition {
+    BLINDED,
+    CHARMED,
+    DEAFEND,
+    FRIGHTENED,
+    GRAPPLED,
+    INCAPACITATED,
+    INVISIBLE,
+    PARALYZED,
+    PETRIFIED,
+    POISNED,
+    PRONE,
+    RESTRAINED,
+    STUNNED,
+    UNCONSIOUS,
+    EXHAUSTION1,
+    EXHAUSTION2,
+    EXHAUSTION3,
+    EXHAUSTION4,
+    EXHAUSTION5
+}

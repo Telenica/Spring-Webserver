@@ -1,7 +1,10 @@
-package com.example.WebProject;
+package com.example.WebProject.DSA;
 
 import jakarta.persistence.Entity;
 import java.util.List;
+
+import com.example.WebProject.Enemys.EnemyTemplate;
+import com.example.WebProject.Enumzusätze.Systeme;
 
 @Entity
 public class DSAEnemy extends EnemyTemplate{

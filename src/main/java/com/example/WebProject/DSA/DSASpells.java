@@ -1,4 +1,4 @@
-package com.example.WebProject;
+package com.example.WebProject.DSA;
 
 import lombok.Getter;
 import lombok.Setter;

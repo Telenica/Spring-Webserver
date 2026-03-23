@@ -1,10 +1,12 @@
-package com.example.WebProject;
+package com.example.WebProject.Controller;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
+
+import com.example.WebProject.Enemys.EnemyTemplate;
 
 //Nur ein Link statt mehrere an Enemy
 @Component

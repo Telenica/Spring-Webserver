@@ -1,4 +1,4 @@
-package com.example.WebProject;
+package com.example.WebProject.DSA;
 
 public enum DSAWaffe{
     //ARMBRUESTE

@@ -1,4 +1,4 @@
-  package com.example.WebProject;
+  package com.example.WebProject.DnD;
 
     public enum DnDAction {
         WEAPON_ATTACK,
