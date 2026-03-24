@@ -23,14 +23,14 @@ public class DndEnemy extends EnemyTemplate {
     @Getter @Setter private int Speed;
     @Getter @Setter private int Ini;
     @Getter @Setter private double Cr;
-    private List<DnDWaffe> Waffen;
+    private List<DnDWaffenTemplate> Waffen;
     @Getter @Setter private List<DnDDamageType> Resistance;
     @Getter @Setter private List<DnDDamageType> Immunitys;
     @Getter @Setter private List<DnDSense> Senses;
     private List<DnDSpells> Spells; 
     @Getter @Setter private List<DnDAction> Actions;
 
-    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, int Ini, double Cr, List<DnDWaffe> Waffen,List<DnDDamageType> Resistance, List<DnDDamageType> Immunitys, List<DnDSense> Senses, List<DnDSpells> Spells, List<DnDAction> Actions){
+    public DndEnemy(String species, String subspecies, String biom, int maxHP, Systeme sys, int Str, int Dex, int Con, int Int, int Wis, int Cha, int Ac, int Speed, int Ini, double Cr, List<DnDWaffenTemplate> Waffen,List<DnDDamageType> Resistance, List<DnDDamageType> Immunitys, List<DnDSense> Senses, List<DnDSpells> Spells, List<DnDAction> Actions){
         super(species, subspecies, biom, maxHP, sys);
         this.Str = Str;
         this.Dex = Dex;
@@ -53,19 +53,19 @@ public class DndEnemy extends EnemyTemplate {
     //Spezielle Getter und Setter
     
     //Waffen
-    public List<DnDWaffe> getWaffen() {
+    public List<DnDWaffenTemplate> getWaffen() {
         return Waffen;
     }
 
-    public void setWaffen(List<DnDWaffe> Waffen) {
+    public void setWaffen(List<DnDWaffenTemplate> Waffen) {
         this.Waffen = Waffen;
     }
 
-    public void addWaffe(DnDWaffe Waffe) {
+    public void addWaffe(DnDWaffenTemplate Waffe) {
         this.Waffen.add(Waffe);
     }
 
-    public void removeWaffe(DnDWaffe Waffe) {
+    public void removeWaffe(DnDWaffenTemplate Waffe) {
         this.Waffen.remove(Waffe);
     }
 
