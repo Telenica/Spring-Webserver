@@ -27,10 +27,10 @@ public class DSAEnemy extends EnemyTemplate{
     private int PARADE;
     @Getter @Setter private int FERNKAMPF;
     @Getter @Setter private int AUSWEICHEN;
-    private List<DSAWaffe> WAFFEN;
+    private List<DSAWaffenTemplate> WAFFEN;
     private List<DSASpells> SPELLS;
 
-    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW, List<DSAWaffe> WAFFEN, List<DSASpells> spells){
+    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW, List<DSAWaffenTemplate> WAFFEN, List<DSASpells> spells){
         super(species, subSpecies, biom, maxHP, sys);
         this.MUT = MU;
         this.KLUGHEIT = KL;
@@ -71,19 +71,19 @@ public class DSAEnemy extends EnemyTemplate{
     }
 
     //Waffen
-    public List<DSAWaffe> getWaffen() {
+    public List<DSAWaffenTemplate> getWaffen() {
         return WAFFEN;
     }
 
-    public void setWaffen(List<DSAWaffe> WAFFEN) {
+    public void setWaffen(List<DSAWaffenTemplate> WAFFEN) {
         this.WAFFEN = WAFFEN;
     }
 
-    public void addWaffe(DSAWaffe Waffe) {
+    public void addWaffe(DSAWaffenTemplate Waffe) {
         this.WAFFEN.add(Waffe);
     }
 
-    public void removeWaffe(DSAWaffe Waffe) {
+    public void removeWaffe(DSAWaffenTemplate Waffe) {
         this.WAFFEN.remove(Waffe);
     }
 

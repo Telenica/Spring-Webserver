@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.WebProject.DnD.DnDWaffenTemplate;
 
-@RepositoryRestResource(collectionResourceRel = "weapons", path = "weapons")
+@RepositoryRestResource(collectionResourceRel = "dndweapons", path = "dndweapons")
 public interface DnDWaffenRepository extends JpaRepository<DnDWaffenTemplate, Long> {
     List<DnDWaffenTemplate> findByName(@Param("name") String name);
 }
