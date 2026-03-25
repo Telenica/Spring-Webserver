@@ -28,9 +28,9 @@ public class DSAEnemy extends EnemyTemplate{
     @Getter @Setter private int FERNKAMPF;
     @Getter @Setter private int AUSWEICHEN;
     private List<DSAWaffenTemplate> WAFFEN;
-    private List<DSASpells> SPELLS;
+    private List<DSASpellTemplate> SPELLS;
 
-    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW, List<DSAWaffenTemplate> WAFFEN, List<DSASpells> spells){
+    public DSAEnemy(String species, String subSpecies, String biom, int maxHP, Systeme sys, int MU, int KL, int IN, int CH, int FF, int GW, int KO, int KK, int GS, int IB, int AT, int PA, int FK, int AW, List<DSAWaffenTemplate> WAFFEN, List<DSASpellTemplate> spells){
         super(species, subSpecies, biom, maxHP, sys);
         this.MUT = MU;
         this.KLUGHEIT = KL;
@@ -88,19 +88,19 @@ public class DSAEnemy extends EnemyTemplate{
     }
 
     //Spells
-    public List<DSASpells> getSpells() {
+    public List<DSASpellTemplate> getSpells() {
         return this.SPELLS;
     }
 
-    public void setSpells(List<DSASpells> Spells) {
+    public void setSpells(List<DSASpellTemplate> Spells) {
         this.SPELLS = Spells;
     }
 
-    public void addSpell(DSASpells Spell) {
+    public void addSpell(DSASpellTemplate Spell) {
         this.SPELLS.add(Spell);
     }
 
-    public void removeSpell(DSASpells Spell) {
+    public void removeSpell(DSASpellTemplate Spell) {
         this.SPELLS.remove(Spell);
     }
 }
